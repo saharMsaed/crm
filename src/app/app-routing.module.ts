@@ -4,7 +4,11 @@ import { PageListOrdersComponent } from './orders/pages/page-list-orders/page-li
 
 const routes: Routes = [
   { path: 'orders', component: PageListOrdersComponent  },
-  { path: 'sahar', redirectTo: 'orders', pathMatch: 'full'  }
+  { path: 'sahar', redirectTo: 'orders', pathMatch: 'full' },
+  {
+    path: '**',
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+  }
 ];
 
 @NgModule({
