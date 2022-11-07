@@ -1,5 +1,18 @@
 <header class="fixed-top">
-  <button (click)="toggle()">click</button>
+  <!-- <button (click)="toggle()">{{ buttonLabel }}</button> -->
+
+  <!-- <button (click)="toggle()" *ngIf="close ;else other_content">open</button>
+  <ng-template #other_content><button (click)="toggle()">close</button></ng-template> -->
+
+  <!-- ng-container pour faire des structure  -->
+  <ng-container *ngIf="close ;then thenBlock else elseBlock"></ng-container>
+  <ng-template #thenBlock>
+    <button class="btn btn-primary btn-sm"  (click)="toggle()">open</button>
+  </ng-template>
+  <ng-template #elseBlock>
+    <button class="btn btn-primary btn-sm" (click)="toggle()">close</button>
+  </ng-template>
+
   <app-header></app-header>
 </header>
 <main [ngClass]="{'close-aside': close}">

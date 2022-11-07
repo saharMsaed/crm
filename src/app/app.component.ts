@@ -8,13 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public title: string ;
   public close: boolean ;
+  public buttonLabel: string ;
   constructor() {
     this.title = 'crm';
     this.close = false;
+    this.buttonLabel = 'close';
   }
 
   public toggle(): void {
     this.close = !this.close;
+    this.close ? this.buttonLabel = 'open' : this.buttonLabel = 'close';
   }
 
 
