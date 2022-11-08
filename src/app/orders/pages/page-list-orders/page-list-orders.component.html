@@ -1,3 +1,4 @@
+<!-- <pre>{{ collection|json }}</pre> -->
 <table class="table">
   <thead>
     <tr>
@@ -6,12 +7,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let order of collection">
-      <td> {{ order.typePresta }} </td>
+      <td> {{ order.typePresta | uppercase }} </td>
       <td> {{ order.client }} </td>
       <td> {{ order.nbJours }} </td>
-      <td> {{ order.tjmHt }} </td>
-      <td> {{ total(order.nbJours, order.tjmHt) }} </td>
-      <td> {{ total(order.nbJours, order.tjmHt, order.tva) }} </td>
+      <td> {{ order.tjmHt | currency }} </td>
+      <td> {{ order.nbJours| total : order.tjmHt | currency }} </td>
+      <td> {{ order.nbJours| total : order.tjmHt : order.tva | currency }} </td>
       <td> {{ order.state }} </td>
     </tr>
   </tbody>
