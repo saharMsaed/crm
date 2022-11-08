@@ -9,7 +9,9 @@ import { OrdersService } from '../../services/orders.service';
 export class PageListOrdersComponent implements OnInit {
 
   constructor(private ordersService: OrdersService) {
-    this.ordersService.collection$.subscribe((data) => console.log(data));
+    // souscrire pour récupérer dans le callback les données
+    this.ordersService.collection$.subscribe((data) => {
+      console.log(data)});
    }
 
   ngOnInit(): void {

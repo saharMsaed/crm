@@ -10,7 +10,10 @@ export class OrdersService {
   public collection$: Observable<Order[]>;
 
   constructor(private httpClient: HttpClient) {
-    this.collection$ = this.httpClient.get<Order[]>('http://localhost:3000/orders');
+    // init flux de données
+    this.collection$ = this.httpClient.get<Order[]>(
+      '/orders'
+    );
     console.log(this.collection$);
   }
 }
