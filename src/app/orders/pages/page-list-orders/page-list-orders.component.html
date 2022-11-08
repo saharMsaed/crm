@@ -1,5 +1,5 @@
 <!-- <pre>{{ collection|json }}</pre> -->
-s'occuper de subscribe
+<!-- s'occuper de subscribe -->
 <table class="table" *ngIf="collection$ |async as collection">
   <thead>
     <tr>
@@ -14,7 +14,7 @@ s'occuper de subscribe
       <td> {{ order.tjmHt | currency }} </td>
       <td> {{ order.nbJours| total : order.tjmHt | currency }} </td>
       <td> {{ order.nbJours| total : order.tjmHt : order.tva | currency }} </td>
-      <td> {{ order.state }} </td>
+      <td [class]="'state-'+order.state| lowercase"> {{ order.state }} </td>
     </tr>
   </tbody>
 </table>
