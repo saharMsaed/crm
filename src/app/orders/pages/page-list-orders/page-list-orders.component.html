@@ -10,8 +10,8 @@
       <td> {{ order.client }} </td>
       <td> {{ order.nbJours }} </td>
       <td> {{ order.tjmHt }} </td>
-      <td> T </td>
-      <td> T </td>
+      <td> {{ total(order.nbJours, order.tjmHt) }} </td>
+      <td> {{ total(order.nbJours, order.tjmHt, order.tva) }} </td>
       <td> {{ order.state }} </td>
     </tr>
   </tbody>
