@@ -18,5 +18,4 @@ export class OrdersService {
     this.collection$ = this.httpClient.get<Order[]>(`${this.urlApi}/orders`);
     console.log(this.collection$);
   }
-
 }
