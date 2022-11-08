@@ -1,1 +1,19 @@
-<p>page-list-orders works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of collection">
+      <td> {{ order.typePresta }} </td>
+      <td> {{ order.client }} </td>
+      <td> {{ order.nbJours }} </td>
+      <td> {{ order.tjmHt }} </td>
+      <td> T </td>
+      <td> T </td>
+      <td> {{ order.state }} </td>
+    </tr>
+  </tbody>
+</table>
+
