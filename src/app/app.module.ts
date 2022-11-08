@@ -11,8 +11,9 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule, //celui qui se charge de lister les modules au démarrage
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
