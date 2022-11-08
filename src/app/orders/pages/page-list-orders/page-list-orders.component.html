@@ -1,5 +1,6 @@
 <!-- <pre>{{ collection|json }}</pre> -->
-<table class="table">
+s'occuper de subscribe
+<table class="table" *ngIf="collection$ |async as collection">
   <thead>
     <tr>
       <th *ngFor="let header of headers">{{ header }}</th>

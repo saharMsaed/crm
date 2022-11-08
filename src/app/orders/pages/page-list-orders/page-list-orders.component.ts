@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -8,16 +9,12 @@ import { OrdersService } from '../../services/orders.service';
   styleUrls: ['./page-list-orders.component.css'],
 })
 export class PageListOrdersComponent implements OnInit {
-  public collection!: Order[];
+  public collection$!: Observable<Order[]>;
   public headers!: string[];
 
   constructor(private ordersService: OrdersService) {
+    this.collection$ = this.ordersService.collection$;
     this.headers = ['Type', 'Client', 'Durée', 'Tjm HT', 'Total HT', 'Total TTC', 'Statut']
-    // souscrire pour récupérer dans le callback les données
-    this.ordersService.collection$.subscribe((data) => {
-      this.collection = data;
-   })
-   //console.log(this.collection)
   }
 
   ngOnInit(): void {

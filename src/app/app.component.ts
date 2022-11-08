@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ export class AppComponent {
   public close: boolean ;
   public buttonLabel: string ;
   private obs: Observable<any>;
+  private sub: Subscription;
 
   constructor() {
     this.title = 'crm';
@@ -19,12 +20,16 @@ export class AppComponent {
     this.obs =  new Observable<any>((listX) => {
       listX.next(Math.random()); //init des données au flux
     })
-    this.obs.subscribe((data) => console.log(data));
-    this.obs.subscribe((data) => console.log(data));
+    this.sub = this.obs.subscribe((data) => console.log(data));
+    // this.obs.subscribe((data) => console.log(data));
   }
 
   public toggle(): void {
     this.close = !this.close;
     this.close ? this.buttonLabel = 'open' : this.buttonLabel = 'close';
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }
