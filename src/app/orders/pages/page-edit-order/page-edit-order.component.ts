@@ -11,23 +11,24 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageEditOrderComponent implements OnInit {
   public id!: number;
-  // public order!: Order;
+  public order!: Order;
   //or
-  public order$: Observable<Order>;
+  //public order$: Observable<Order>;
   constructor(private orderService: OrdersService, private route: ActivatedRoute, private router: Router) {
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params["id"];
       })
+
     // or sans subscribe
     // this.id = this.route.snapshot.params['id'];
     //console.log(this.orderService.getById(this.id).subscribe());
 
-    // this.orderService.getById(this.id).subscribe((data) => {
-    //   this.order = data
-    // });
+    this.orderService.getById(this.id).subscribe((data) => {
+      this.order = data
+    });
 
-    this.order$ = this.orderService.getById(this.id);
+    // this.order$ = this.orderService.getById(this.id);
 
   }
 
