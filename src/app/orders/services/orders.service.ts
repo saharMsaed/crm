@@ -24,7 +24,9 @@ export class OrdersService {
   }
 
   public getById(id: number): Observable<Order> {
-    return this.httpClient.get<Order>(`${this.urlApi}/orders/`+id);
+    // return this.httpClient.get<Order>(`${this.urlApi}/orders/`+id);
+    // or
+    return this.httpClient.get<Order>(`${this.urlApi}/orders/${id}`);
   }
 
   public put(item: Order): Observable<Order> {

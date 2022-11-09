@@ -1,3 +1,8 @@
-<div class="my-container" *ngIf="order$">
-  <app-form-order [init]="order$" (submitted)="action($event)"></app-form-order>
+<!-- <div class="my-container" *ngIf="order">
+  <app-form-order [init]="order" (submitted)="action($event)"></app-form-order>
+</div> -->
+
+<!-- or -->
+<div class="my-container" *ngIf="order$|async as order">
+  <app-form-order [init]="order" (submitted)="action($event)"></app-form-order>
 </div>

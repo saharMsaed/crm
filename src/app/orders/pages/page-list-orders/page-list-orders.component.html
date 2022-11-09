@@ -10,7 +10,7 @@
     <tr *ngFor="let order of collection">
       <td>
         <button class="btn btn-link pt-0" [routerLink]="'edit/'+ order.id">edit</button>
-        <button class="btn btn-link pt-0" [routerLink]="'delete/'+ order.id">delete</button>
+        <button class="btn btn-link pt-0 text-danger" [routerLink]="'delete/'+ order.id">delete</button>
       </td>
       <td> {{ order.typePresta | uppercase }} </td>
       <td> {{ order.client }} </td>
