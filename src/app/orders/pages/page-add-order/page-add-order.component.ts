@@ -24,6 +24,5 @@ export class PageAddOrderComponent implements OnInit {
     this.orderService.add(item).subscribe(() => {
       this.router.navigate(['orders']);
     });
-
   }
 }

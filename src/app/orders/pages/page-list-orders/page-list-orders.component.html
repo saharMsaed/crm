@@ -1,6 +1,6 @@
 <!-- <pre>{{ collection|json }}</pre> -->
 <!-- s'occuper de subscribe -->
-<table class="table" *ngIf="collection$ |async as collection">
+<table class="table text-center" *ngIf="collection$ |async as collection">
   <thead>
     <tr>
       <th *ngFor="let header of headers">{{ header }}</th>
@@ -8,6 +8,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let order of collection">
+      <td>
+        <button class="btn btn-link pt-0" [routerLink]="'edit/'+ order.id">edit</button>
+        <button class="btn btn-link pt-0" [routerLink]="'delete/'+ order.id">delete</button>
+      </td>
       <td> {{ order.typePresta | uppercase }} </td>
       <td> {{ order.client }} </td>
       <td> {{ order.nbJours }} </td>

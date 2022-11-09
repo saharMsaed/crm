@@ -14,7 +14,7 @@ export class PageListOrdersComponent implements OnInit {
 
   constructor(private ordersService: OrdersService) {
     this.collection$ = this.ordersService.collection$;
-    this.headers = ['Type', 'Client', 'Durée', 'Tjm HT', 'Total HT', 'Total TTC', 'Statut']
+    this.headers = ['Actions', 'Type', 'Client', 'Durée', 'Tjm HT', 'Total HT', 'Total TTC', 'Statut']
   }
 
   ngOnInit(): void {
