@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -11,7 +12,7 @@ export class PageAddOrderComponent implements OnInit {
 
   public order: Order;
 
-  constructor(private orderService: OrdersService) {
+  constructor(private orderService: OrdersService, private router: Router) {
     this.order = new Order;
   }
 
@@ -20,6 +21,9 @@ export class PageAddOrderComponent implements OnInit {
 
   //inject service pour faire post
   public action(item: Order){
-    this.orderService.add(item).subscribe();
+    this.orderService.add(item).subscribe(() => {
+      this.router.navigate(['orders']);
+    });
+
   }
 }

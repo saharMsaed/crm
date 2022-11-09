@@ -59,6 +59,16 @@
       "state": "OPTION",
       "comment": null,
       "id": 6
+    },
+    {
+      "typePresta": "vvvv",
+      "client": "vvvvvvv",
+      "nbJours": 1,
+      "tjmHt": 1200,
+      "tva": 20,
+      "state": "OPTION",
+      "comment": null,
+      "id": 7
     }
   ]
 }
