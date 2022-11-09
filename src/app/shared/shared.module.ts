@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TotalPipe } from './pipes/total.pipe';
 import { BtnComponent } from './component/btn/btn.component';
 import { RouterLink } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +19,7 @@ import { RouterLink } from '@angular/router';
   exports: [
     TotalPipe,
     BtnComponent,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
